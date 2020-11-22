@@ -1,13 +1,13 @@
 <template>
         <div class="[ card ]">
             <div class="[ row ]">
-                 <div class="[ col-sm-4 ]"><img :src="image" /><br /><br /><br /></div>
-                 <div class="[ col-sm-4 ]"></div>
-            </div>
-               <div class="[ card--information ]"><br /> 
-                  
+              <div class="[ card--information ]"><br />  <div class="[ col -sm-4 ]"><img :src="image"><br /><br /></div>
+                   <b>Title: </b>{{title}}<br />
+                   <b>Ingredients: </b>{{ingredients}}<br />
+                   <b>Recipe: </b><a :href="link" target="_blank">Click here</a><br /><br />
               </div>
-        </div>   
+            </div> 
+        </div>
 </template>
 
 <script>

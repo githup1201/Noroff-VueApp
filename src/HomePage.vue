@@ -1,11 +1,13 @@
 <template>
-    <div class="[ row ]">
-    <div class="[ col-sm-12 ]">
-         <recipeComponent
-                    
+  <div>
+    <div v-for="(recipe, puppy) in recipes" v-bind:key="puppy" class="[ col-sm-12 ]">
+         <recipeComponent v-bind:image="recipe.thumbnail"
+                          v-bind:title="recipe.title"
+                          v-bind:ingredients="recipe.ingredients"
+                          v-bind:link="recipe.href"
          ></recipeComponent>
        </div>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -31,12 +33,31 @@ export default {
           return response.json();
         })
         .then(function(result) {
-          app.recipes = result;
+          app.recipes = result.results;
         })
-    }
-    }
-      
-    
-  
-
+      }
+    } 
 </script>
+
+
+<style scoped>
+
+body{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.card{
+    border: solid 2px black;
+    border-radius: 4px;
+    padding: 0px 20px 30px;
+    margin-top: 30px
+}
+
+.card img{
+    width: 100%;
+    padding-top: 20px;
+}
+
+</style>
